@@ -1,4 +1,5 @@
 # Description
+# This program detects fake news
 
 
 import numpy as np
