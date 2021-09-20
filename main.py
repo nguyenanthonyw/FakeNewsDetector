@@ -18,7 +18,7 @@ df.shape
 
 df.isnull().sum()
 
-df.dropna(axis=0, inplace= True) #drop any data with missing fields
+df.dropna(axis=0, inplace= True) #drop any data with missing field
 df.shape
 
 #combines columns
