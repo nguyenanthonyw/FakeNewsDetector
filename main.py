@@ -13,7 +13,7 @@ df = pd.read_csv('Fake.csv')
 
 print(df.head)
 
-df.drop_duplicates(inplace= True) #detect any duplicates
+df.drop_duplicates(inplace= True) #detect any duplicate
 df.shape
 
 df.isnull().sum()
