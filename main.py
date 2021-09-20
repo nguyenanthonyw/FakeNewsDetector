@@ -7,6 +7,7 @@ import pandas as pd
 import nltk
 from nltk.corpus import stopwords
 import string
+from sklearn.feature_extraction.text import CountVectorizer
 
 df = pd.read_csv('Fake.csv')
 
@@ -39,3 +40,5 @@ def process_text(text):
 
 
 print(df['combined'].head().apply(process_text))
+
+message_bow = CountVectorizer(analyzer=process_text).fit_transform(df['combined'])
