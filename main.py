@@ -8,6 +8,8 @@ import nltk
 from nltk.corpus import stopwords
 import string
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
 
 df = pd.read_csv('Fake.csv')
 
@@ -42,3 +44,10 @@ def process_text(text):
 print(df['combined'].head().apply(process_text))
 
 message_bow = CountVectorizer(analyzer=process_text).fit_transform(df['combined'])
+x_train,x_test,y_train, y_text = train_test_split(message_bow, df['label'], test_size=.20, random_state= 0)
+
+message_bow.shape
+
+classifer = MultinomialNB
+classifer.fit(x_train,y_train)
+
