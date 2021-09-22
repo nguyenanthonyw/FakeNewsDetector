@@ -48,6 +48,6 @@ x_train,x_test,y_train, y_text = train_test_split(message_bow, df['label'], test
 
 message_bow.shape
 
-classifer = MultinomialNB
+classifer = MultinomialNB()
 classifer.fit(x_train,y_train)
 
