@@ -10,6 +10,8 @@ import string
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import classification_report
+
 
 df = pd.read_csv('Fake.csv')
 
@@ -50,4 +52,11 @@ message_bow.shape
 
 classifer = MultinomialNB()
 classifer.fit(x_train,y_train)
+
+MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)
+
+print(classifer.predict(x_train))
+print(y_train.values)
+pred = classifer.predict(x_train)
+print(classification_report(y_train, pred))
 
